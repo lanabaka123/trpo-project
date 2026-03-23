@@ -25,9 +25,9 @@
             <TabItem x:Name="goida" Header="Заказы" Initialized="goida_Initialized">
                 <DataGrid x:Name="OrdersDataGrid" AutoGenerateColumns="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID Заказа" Binding="{Binding Id}" Visibility="Visible"/>
-                        <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat='dd.MM.yyyy'}"/>
-                        <DataGridTextColumn Header="Пользователь" Binding="{Binding User.FIO}"/>
+                        <DataGridTextColumn Header="ID Заказа" Binding="{Binding id}" Visibility="Visible"/>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding date, StringFormat='dd.MM.yyyy'}"/>
+                        <DataGridTextColumn Header="Описание" Binding="{Binding desc}"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

@@ -21,8 +21,6 @@ namespace WpfAppoo1
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // ... другие настройки ...
-
 
             modelBuilder.Entity<User>().ToTable("users");
 

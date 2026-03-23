@@ -15,17 +15,15 @@ using System.Windows.Shapes;
 
 namespace WpfAppoo1
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        public User authPenis { get; set; }
+        public User authUser { get; set; }
         private ApplicationDbContext dbContext;
 
-        public MainWindow(User penis)
+        public MainWindow(User user)
         {
-            authPenis = penis;
+            authUser = user;
             dbContext = new ApplicationDbContext();
 
             InitializeComponent();
@@ -33,12 +31,15 @@ namespace WpfAppoo1
 
         private void goida_Initialized(object sender, EventArgs e)
         {
-            //goida.Visibility = Visibility.Hidden;
+            if (authUser.FIO != "admin")
+            { 
+               //   goida.Visibility = Visibility.Hidden;
+            }
         }
 
         private void fio_Initialized(object sender, EventArgs e)
         {
-            fio.Content = authPenis.FIO;
+            fio.Content = authUser.FIO;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
