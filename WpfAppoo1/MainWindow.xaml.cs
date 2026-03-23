@@ -20,9 +20,31 @@ namespace WpfAppoo1
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public User authPenis { get; set; }
+        private ApplicationDbContext dbContext;
+
+        public MainWindow(User penis)
         {
+            authPenis = penis;
+            dbContext = new ApplicationDbContext();
+
             InitializeComponent();
+        }
+
+        private void goida_Initialized(object sender, EventArgs e)
+        {
+            //goida.Visibility = Visibility.Hidden;
+        }
+
+        private void fio_Initialized(object sender, EventArgs e)
+        {
+            fio.Content = authPenis.FIO;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ProductsDataGrid.ItemsSource = dbContext.products.ToList();
+            OrdersDataGrid.ItemsSource = dbContext.orders.ToList();
         }
     }
 }

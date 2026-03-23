@@ -29,5 +29,32 @@ namespace WpfAppoo1
         {
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+            string login = penis.Text;
+            string password = passwordPenis.Password;
+
+            using (var db = new ApplicationDbContext())
+            {
+                var user = db.Users.FirstOrDefault(u => u.login == login && u.password == password);
+
+                if (user != null)
+                {
+                    MainWindow mainWindow = new MainWindow(user);
+                    this.Close();
+                    mainWindow.Show();
+                }
+            }
+
+        }
     }
 }

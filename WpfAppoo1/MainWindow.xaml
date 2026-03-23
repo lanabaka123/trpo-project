@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppoo1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="91*"/>
+            <ColumnDefinition Width="45*"/>
+            <ColumnDefinition Width="264*"/>
+        </Grid.ColumnDefinitions>
+        <TabControl Margin="0,17,0,0" Grid.ColumnSpan="3">
+            <TabItem Header="Товары">
+                <DataGrid x:Name="ProductsDataGrid" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ид" Binding="{Binding id}"/>
+                        <DataGridTextColumn Header="Название" Binding="{Binding name}"/>
+                        <DataGridTextColumn Header="цена" Binding="{Binding price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem x:Name="goida" Header="Заказы" Initialized="goida_Initialized">
+                <DataGrid x:Name="OrdersDataGrid" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID Заказа" Binding="{Binding Id}" Visibility="Visible"/>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat='dd.MM.yyyy'}"/>
+                        <DataGridTextColumn Header="Пользователь" Binding="{Binding User.FIO}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10">
+            <Label x:Name="fio" Content="Label" Margin="430,0,10,404" Initialized="fio_Initialized" Grid.Column="2" Height="40" Width="63"/>
+            <Image Stretch="Fill" Source="/макс.PNG" Width="40" Height="40"/>
+        </StackPanel>
     </Grid>
 </Window>
