@@ -8,10 +8,12 @@
         Title="AuthorizationWindow" Height="450" Width="800">
 
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Label Content="Логин" Margin="148,166,599,235"/>
-    <Label Content="Пароль" Margin="148,199,599,202"/>
-        <TextBox TextWrapping="Wrap" Text="" Width="120" Height="27" Margin="213,170,467,239" TextChanged="TextBox_TextChanged"/>
-        <PasswordBox Width="120" Margin="213,202,467,205" Height="27"/>
+        <Label Content="Логин" Margin="304,167,443,234"/>
+        <Label Content="Пароль" Margin="304,199,443,201"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="120" Height="27" Margin="369,171,311,236" TextChanged="TextBox_TextChanged"/>
+        <PasswordBox Width="120" Margin="369,203,311,204" Height="27"/>
+        <Button Content="Войти" Margin="369,241,311,162"/>
+        <Button Content="Продолжить как гость" Margin="369,277,311,125" FontSize="11"/>
     </Grid>
 
 </Window>
