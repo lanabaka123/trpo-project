@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfAppoo1.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppoo1"
+        mc:Ignorable="d"
+        Title="AuthorizationWindow" Height="450" Width="800">
+
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Label Content="Логин" Margin="148,166,599,235"/>
+    <Label Content="Пароль" Margin="148,199,599,202"/>
+        <TextBox TextWrapping="Wrap" Text="" Width="120" Height="27" Margin="213,170,467,239" TextChanged="TextBox_TextChanged"/>
+        <PasswordBox Width="120" Margin="213,202,467,205" Height="27"/>
+    </Grid>
+
+</Window>

@@ -13,5 +13,11 @@ namespace WpfAppoo1
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+            AuthorizationWindow authWindow = new AuthorizationWindow();
+            authWindow.Show();
+        }
     }
 }
